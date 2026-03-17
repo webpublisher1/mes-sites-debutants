@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Citations</title>
+    </head>
+    <body style="background-color: #000000;">
+        <center>
+            <font size="7" color="#ffffff"><h1><u><b>Quelques citations...</b></u></h1></font>
+            <br />
+            <br />
+            <br />
+            <br />
+        </center>
+        <script>
+            const cit = [
+                            {"quote": "La vie est un mystère qu'il faut vivre, et non un problème à résoudre.", "author": "Gandhi"},
+                            {"quote": "Il n'y a qu'une façon d'échouer, c'est d'abandonner avant d'avoir réussi.", "author": "Georges Clémenceau"},
+                            {"quote": "Rien n'est impossible, seule l'attitude compte.", "author": "Charles Chaplin"},
+                            {"quote": "Le bonheur n'est pas quelque chose de prêt à l'emploi. Il vient de vos propres actions.", "author": "Dalaï Lama"},
+                            {"quote": "On ne voit bien qu'avec le cœur. L'essentiel est invisible pour les yeux.", "author": "Antoine de Saint-Exupéry"},
+                            {"quote": "Fais de ta vie un rêve, et d'un rêve, une réalité.", "author": "Antoine de Saint-Exupéry"},
+                            {"quote": "Connais-toi toi-même.", "author": "Socrate"},
+                            {"quote": "Agis comme s'il était impossible d'échouer.", "author": "Dorothy Broude"},
+                            {"quote": "Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès.", "author": "Albert Schweitzer"},
+                            {"quote": "La plus grande gloire n'est pas de ne jamais tomber, mais de se relever à chaque chute.", "author": "Confucius"},
+                            {"quote": "Le meilleur moyen de réaliser l'impossible est de croire que c'est possible.", "author": "Charles Kingsleigh"},
+                            {"quote": "Les grandes choses ne sont jamais faites par une seule personne.", "author": "Steve Jobs"},
+                            {"quote": "C'est notre choix qui montre ce que nous sommes vraiment, bien plus que nos capacités.", "author": "J.K. Rowling"},
+                            {"quote": "Il n'y a pas de passion à jouer petit, à se contenter d'une vie qui est inférieure à celle que vous êtes capable de vivre.", "author": "Nelson Mandela"},
+                            {"quote": "Le vrai signe de l'intelligence n'est pas la connaissance mais l'imagination.", "author": "Albert Einstein"},
+                            {"quote": "Les obstacles sont ces choses effrayantes que vous apercevez lorsque vous perdez de vue vos objectifs.", "author": "Henry Ford"},
+                            {"quote": "La vie est ce qui arrive quand on est occupé à faire d'autres projets.", "author": "John Lennon"},
+                            {"quote": "Le courage ne rugit pas toujours. Parfois, le courage est la petite voix à la fin de la journée qui dit : j’essaierai encore demain.", "author": "Mary Anne Radmacher"},
+                            {"quote": "Ne juge pas chaque jour à la récolte que tu fais mais aux graines que tu sèmes.", "author": "Robert Louis Stevenson"},
+                            {"quote": "La simplicité est la sophistication suprême.", "author": "Léonard de Vinci"},
+                            {"quote": "Le bonheur est réel seulement lorsqu'il est partagé.", "author": "Christopher McCandless"},
+                            {"quote": "Les difficultés préparent souvent les gens ordinaires à un destin extraordinaire.", "author": "C.S. Lewis"},
+                            {"quote": "Le succès est la somme de petits efforts répétés jour après jour.", "author": "Robert Collier"},
+                            {"quote": "N'attends pas. Le temps ne sera jamais juste.", "author": "Napoléon Hill"},
+                            {"quote": "Les grandes idées viennent du cœur, pas de la tête.", "author": "Luc de Clapiers"},
+                            {"quote": "Dieu a créé l'Homme à son image. Puis, l'Homme a créé dieu à son image.", "author": "Philippe Geluck"},
+                            {"quote": "Fais ce que tu peux, avec ce que tu as, là où tu es.", "author": "Théodore Roosevelt"},
+                            {"quote": "Il faut toujours viser la lune, car même en cas d’échec, on atterrit dans les étoiles.", "author": "Oscar Wilde"},
+                            {"quote": "La créativité, c’est l’intelligence qui s’amuse.", "author": "Albert Einstein"},
+                            {"quote": "Le pessimiste se plaint du vent ; l’optimiste attend que le vent change ; le réaliste ajuste ses voiles.", "author": "William Arthur Ward"},
+                            {"quote": "Les échecs sont des piliers du succès.", "author": "Bill Gates"},
+                            {"quote": "Ne rêve pas ta vie, vis tes rêves.", "author": "Mark Twain"},
+                            {"quote": "Il n'y a pas de raccourci vers n'importe où qui en vaille la peine.", "author": "Beverly Sills"},
+                            {"quote": "La plus grande erreur que vous puissiez faire dans la vie est d'avoir peur de faire des erreurs.", "author": "Elbert Hubbard"},
+                            {"quote": "Chaque jour est une nouvelle chance de changer ta vie.", "author": "Anonyme"},
+                            {"quote": "La patience est amère, mais son fruit est doux.", "author": "Jean-Jacques Rousseau"},
+                            {"quote": "Apprends comme si tu devais vivre toujours, vis comme si tu devais mourir demain.", "author": "Mahatma Gandhi"},
+                            {"quote": "Le courage, c’est de chercher la vérité et de la dire.", "author": "Jean Jaurès"},
+                            {"quote": "Il est temps de vivre la vie que tu t’es imaginée.", "author": "Henry James"},
+                            {"quote": "Rien ne se perd, rien ne se crée, tout se transforme.", "author": "Lavoisier"},
+                            {"quote": "Il faut viser la perfection, même si on ne l’atteint jamais.", "author": "Michel-Ange"},
+                            {"quote": "C’est dans le silence que l’on entend le mieux sa propre voix.", "author": "Anonyme"},
+                            {"quote": "Le plus grand risque est de ne prendre aucun risque.", "author": "Mark Zuckerberg"},
+                            {"quote": "La vie commence là où commence ta zone de confort.", "author": "Neale Donald Walsch"},
+                            {"quote": "Chaque moment est une chance de tout recommencer.", "author": "Anonyme"},
+                            {"quote": "Les rêves ne fonctionnent que si tu travailles dur.", "author": "John C. Maxwell"},
+                            {"quote": "Ce n’est pas la montagne que nous conquérons, mais nous-mêmes.", "author": "Sir Edmund Hillary"},
+                            {"quote": "La seule limite à notre épanouissement de demain sera nos doutes d’aujourd’hui.", "author": "Franklin D. Roosevelt"},
+                            {"quote": "Le plus grand secret du bonheur est d’être bien avec soi.", "author": "Bernard Fontenelle"},
+                            {"quote": "On ne peut pas changer le passé, mais on peut toujours changer l’avenir.", "author": "Anonyme"},
+                            {"quote": "Il n’y a qu’une façon d’échouer : abandonner.", "author": "Georges Clémenceau"},
+                            {"quote": "Rien de grand ne se fait sans enthousiasme.", "author": "Ralph Waldo Emerson"},
+                            {"quote": "La connaissance s’acquiert par l’expérience, tout le reste n’est que de l’information.", "author": "Albert Einstein"},
+                            {"quote": "Fais ce que tu aimes, et tu ne travailleras jamais un seul jour de ta vie.", "author": "Confucius"},
+                            {"quote": "L’expérience est le nom que chacun donne à ses erreurs.", "author": "Oscar Wilde"},
+                            {"quote": "L'intelligence a été inventée il y a très longtemps par un type vachement malin. La Connerie, c'est autre chose. C'est une création collective", "author": "Philippe Geluck"},
+                            {"quote": "Il n’y a pas de vent favorable pour celui qui ne sait où il va.", "author": "Sénèque"},
+                            {"quote": "Le plus difficile n’est pas de changer le monde mais de se changer soi-même.", "author": "Anonyme"},
+                            {"quote": "Ne crains pas d’avancer lentement, crains seulement de t’arrêter.", "author": "Proverbe chinois"},
+                            {"quote": "Tout ce dont vous avez besoin est déjà en vous.", "author": "Anonyme"},
+                            {"quote": "Le succès n’est pas final, l’échec n’est pas fatal : c’est le courage de continuer qui compte.", "author": "Winston Churchill"},
+                            {"quote": "Ne laisse pas le comportement des autres détruire ta paix intérieure.", "author": "Dalai Lama"},
+                            {"quote": "Il faut savoir écouter pour apprendre.", "author": "Platon"},
+                            {"quote": "Le monde est un livre et ceux qui ne voyagent pas n’en lisent qu’une page.", "author": "Saint Augustin"},
+                            {"quote": "On ne peut pas traverser la mer simplement en regardant l’eau.", "author": "Rabindranath Tagore"},
+                            {"quote": "Le bonheur est une direction, pas une destination.", "author": "Sydney J. Harris"},
+                            {"quote": "Il faut toujours viser la lune, car même en cas d’échec, on atterrit dans les étoiles.", "author": "Oscar Wilde"},
+                            {"quote": "La vie est courte, fais en sorte qu’elle soit douce.", "author": "Anonyme"},
+                            {"quote": "Tout ce qui ne nous tue pas nous rend plus fort.", "author": "Friedrich Nietzsche"},
+                            {"quote": "L’action est la clé fondamentale de tout succès.", "author": "Pablo Picasso"},
+                            {"quote": "On ne peut pas changer les cartes que l’on nous a distribuées, mais on peut choisir comment jouer la main.", "author": "Randy Pausch"},
+                            {"quote": "Rêve grand et ose échouer.", "author": "Norman Vaughan"},
+                            {"quote": "La seule façon de faire un excellent travail est d’aimer ce que vous faites.", "author": "Steve Jobs"},
+                            {"quote": "L’éducation est l’arme la plus puissante pour changer le monde.", "author": "Nelson Mandela"},
+                            {"quote": "La patience est la clé de la joie.", "author": "Ralph Waldo Emerson"},
+                            {"quote": "Le bonheur est la seule chose qui se multiplie lorsqu’on le partage.", "author": "Albert Schweitzer"},
+                            {"quote": "Apprends à hier à oublier, aujourd’hui à profiter et demain à espérer.", "author": "Anonyme"},
+                            {"quote": "La persévérance est la mère du succès.", "author": "Napoléon Bonaparte"},
+                            {"quote": "Fais confiance à ton intuition.", "author": "Albert Einstein"},
+                            {"quote": "Ne perds pas ton temps à frapper un mur, espérant le transformer en porte.", "author": "Coco Chanel"},
+                            {"quote": "Le vrai voyage de découverte ne consiste pas à chercher de nouveaux paysages, mais à avoir de nouveaux yeux.", "author": "Marcel Proust"},
+                            {"quote": "Le courage est la résistance à la peur, la maîtrise de la peur, pas l’absence de peur.", "author": "Mark Twain"},
+                            {"quote": "L’expérience n’est pas ce qui arrive à un homme ; c’est ce qu’un homme fait avec ce qui lui arrive.", "author": "Aldous Huxley"},
+                            {"quote": "Il faut toujours viser plus haut.", "author": "Michel-Ange"},
+                            {"quote": "Rien ne vaut plus que le moment présent.", "author": "Bouddha"},
+                            {"quote": "La vie est courte, mais large.", "author": "Anonyme"},
+                            {"quote": "Les grandes idées naissent souvent de petites conversations.", "author": "Anonyme"},
+                            {"quote": "Ce n’est pas la force mais la persévérance qui fait les grandes œuvres.", "author": "Samuel Johnson"},
+                            {"quote": "Ne laisse jamais les opinions des autres définir qui tu es.", "author": "Les Brown"},
+                            {"quote": "Chaque succès commence par la décision d’essayer.", "author": "John F. Kennedy"},
+                            {"quote": "La connaissance parle, mais la sagesse écoute.", "author": "Jimi Hendrix"},
+                            {"quote": "Le seul vrai échec est celui dont on ne se relève pas.", "author": "John Madden"},
+                            {"quote": "Rien n’est permanent, sauf le changement.", "author": "Héraclite"},
+                            {"quote": "L’enthousiasme est à la base de tout progrès.", "author": "Henry Ford"},
+                            {"quote": "La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui.", "author": "Déclaration des droits de l’homme"},
+                            {"quote": "Ne cherche pas à tout comprendre pour tout accepter.", "author": "Anonyme"},
+                            {"quote": "La discipline est le pont entre les objectifs et la réussite.", "author": "Jim Rohn"},
+                            {"quote": "Le bonheur ne dépend pas de ce que vous êtes ou de ce que vous avez, il dépend uniquement de ce que vous pensez.", "author": "Bouddha"},
+                            {"quote": "L’art de la réussite consiste à savoir s’entourer des meilleurs.", "author": "John F. Kennedy"},
+                            {"quote": "Le monde appartient à ceux qui se lèvent tôt.", "author": "Anonyme"},
+                            {"quote": "Il n’y a pas de substitut au travail acharné.", "author": "Thomas Edison"},
+                            {"quote": "L’expérience est le professeur le plus sévère.", "author": "William Somerset Maugham"},
+                            {"quote": "La vie est vraiment simple, mais nous insistons à la rendre compliquée.", "author": "Confucius"},
+                            {"quote": "Il n’y a pas de chemin vers le bonheur, le bonheur est le chemin.", "author": "Bouddha"},
+                            {"quote": "Le futur appartient à ceux qui croient à la beauté de leurs rêves.", "author": "Eleanor Roosevelt"},
+                            {"quote": "Le monde change avec ton exemple, pas ton opinion.", "author": "Paulo Coelho"},
+                            {"quote": "Tout ce que l’esprit de l’homme peut concevoir et croire, il peut l’accomplir.", "author": "Napoléon Hill"},
+                            {"quote": "On ne peut pas découvrir de nouvelles terres sans consentir à perdre de vue le rivage pendant longtemps.", "author": "André Gide"},
+                            {"quote": "Il n’y a pas de substitut à la constance.", "author": "Anonyme"},
+                            {"quote": "N’attends pas d’avoir tout parfait pour commencer.", "author": "Anonyme"},
+                            {"quote": "Chaque jour apporte ses propres miracles.", "author": "Anonyme"},
+                            {"quote": "La moitié d'un tas de sable est aussi un tas de sable. De même qu'un demi-trou est un trou entier. Tout comme une partie d'instant est un instant complet.", "author": "Philippe Geluck"}
+                        ]
+
+            function print(cit, aut, idx) {
+                var d = document
+
+                d.write("<center>")
+                d.write("<font color='#ffffff'")
+                d.write("<h3>" + idx + "</h3>")
+                d.write("<p>")
+                d.write("\"" + cit + "\"")
+                d.write(" - ")
+                d.write("<i>")
+                d.write("<u>")
+                d.write(aut)
+                d.write("</u>")
+                d.write("</i>")
+                d.write("</p>")
+                d.write("<br />")
+                d.write("<br />")
+                d.write("<hr width='40%'")
+                d.write("<br />")
+                d.write("<br />")
+                d.write("</font>")
+                d.write("</center>")
+            }
+
+            for (i=0; i<cit.length; i++) {
+                var cita = cit[i].quote
+                var author = cit[i].author
+                print(cita, author, i+1)
+            }
+        </script>
+    </body>
+</html>
