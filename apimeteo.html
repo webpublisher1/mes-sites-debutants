@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!----><!--Mettre des commentaires.-->
+<html><!--Code HTML.-->
+    <head><!--Eléments sur l'icône de la page.-->
+        <meta charset="utf-8" />
+        <title>Station Météo</title>
+    </head>
+
+    <body><!--Coder dans le corps de la page.-->
+		<center><font size=40><!--Agrandir le texte.-->Station météo</font></center>
+		<center><!--Centrer des éléments sur la page.-->
+			<!--Créer un champ de recherche.-->
+			<form id="formMeteo" method="post">
+				<!--Faire le bouton "ville" qui ne sert à rien.-->
+				<label for="ville">
+					<button type="button" i>Ville</button>
+				</label>
+				<!--Mettre en place le champ de recherche.-->
+				<input type="text" id="city" name="ville" placeholder="Entrez le nom d'une ville ou d'un village" />
+				<label for="ville">
+					<!--Bouton qui réinitialise le champ de recherche.-->
+					<button type="reset" style="background-color: red">x</button>
+				<div class="bouton">
+					<br /><!--Sauter une ligne.-->
+					<button type="submit" style="background-color: cyan">Rechercher</button>
+				</div>
+			</form>
+			<br />
+			<div id="res">
+			</div>
+		</center>
+        <!--Ecrire du code en JavaScript.-->
+		<script> 
+			const event = document.getElementById("formMeteo");
+			var display = -1;
+			event.addEventListener("submit", async function (e) {
+				display += 1;
+				e.preventDefault();
+				var ville = document.getElementById("city").value;
+				var elements = await fetch("http://api.weatherapi.com/v1/current.json?key=1a4410a9f2aa48daafc145338252506&q=" + ville + "&lang=fr");
+				var result = await elements.json();
+				console.log(result);
+				var name = result.location.name;
+				var region = result.location.region;
+				var pays = result.location.country;
+				if (region === "") region = pays;
+				var heure = result.location.localtime;
+				var temperature = result.current.temp_c;
+				var icone = result.current.condition.icon;
+				var conditions = result.current.condition.text;
+				var humidite = result.current.humidity;
+				var vitesseVent = result.current.wind_kph;
+				var square = document.getElementById("res"); // Enregistrer toutes les infomations de l'API.
+				var html = "";
+				html += "<div id='square'><div id='top'><label for=\"ville\">";
+				html += "<button class=\"cross\" type=\"reset\" style=\"background-color: red\" onclick=\"this.closest('#square').remove()\">X</button><img src=\"https:" + icone + "\"></img>";
+				html += "<p>" + name + ", " + region + ", " + pays + "</p></div>";
+				html += "<p>Temperature : " + temperature + "°C</p>";
+				html += "<p>Conditions météorologiques : " + conditions + "</p>";
+				html += "<p>Humidité : " + humidite + "%</p>";
+				html += "<p>Vent : " + vitesseVent + " km/h</p>";
+				html += "<p>Dèrnière consultation : " + heure + "</p>";
+				html += "</div>"; // Afficher les informations récoltées.
+				html += "<br />"; // Sauter une ligne.
+				square.innerHTML += html; // Mettre l'affichage dans le code HTML.
+			})
+		</script>
+        <!--Ecrire du code en CSS.-->
+		<style>
+			#square{
+				margin: 60px;
+				width: 25%;
+				height: 300px;
+				background: cyan;
+			}
+			#top{
+				height: 42%;
+				background: #5A9EE0;
+			}
+			#res{
+				max-width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.cross{
+				margin-left: 90%
+			}
+		</style>
+    </body>
+</html>
